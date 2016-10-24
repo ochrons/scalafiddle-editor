@@ -315,6 +315,19 @@
         "compileTimeOnly": false
       },
       {
+        "name": "Apps-Scaripped",
+        "organization": "com.crealytics",
+        "artifact": "apps-scaripped-api",
+        "doc": "https://github.com/crealytics/apps-scaripped",
+        "versions": {
+          "0.2.6": {
+            "scalaVersions": ["2.11"],
+            "extraDeps": []
+          }
+        },
+        "compileTimeOnly": false
+      },
+      {
         "name": "Java8 Time",
         "organization": "org.scala-js",
         "artifact": "scalajs-java-time",
