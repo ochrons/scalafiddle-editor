@@ -1,8 +1,8 @@
 package scalafiddle.client.component
 
-import diode.data.{Pot, Ready}
+import diode.data.Ready
 import diode.react.ModelProxy
-import diode.{Action, ModelR, ModelRO, NoAction}
+import diode._
 import japgolly.scalajs.react._
 import org.scalajs.dom
 import org.scalajs.dom.raw.{Event, HTMLElement, HTMLIFrameElement, MessageEvent}
@@ -11,7 +11,7 @@ import scala.concurrent.ExecutionContext.Implicits.{global => ecGlobal}
 import scala.concurrent.{Future, Promise}
 import scala.scalajs.js
 import scala.scalajs.js.Dynamic._
-import scala.scalajs.js.{JSON, Dynamic => Dyn}
+import scala.scalajs.js.{Dynamic => Dyn}
 import scala.util.Success
 import scalafiddle.client._
 import scalafiddle.shared._
@@ -30,7 +30,7 @@ object FiddleEditor {
     fiddleId: Option[FiddleId],
     outputData: ModelR[AppModel, OutputData],
     loginData: ModelR[AppModel, LoginData]) {
-    def dispatch = data.theDispatch
+    def dispatch[A: ActionType](a: A) = data.dispatchCB(a)
   }
 
   case class State(
