@@ -1,12 +1,12 @@
 package scalafiddle.client.component
 
-import diode.NoAction
+import diode.{Action, ActionType, NoAction}
 import diode.data.{Pot, Ready}
 import diode.react.ModelProxy
 import japgolly.scalajs.react._
 import org.scalajs.dom.raw.HTMLDivElement
-import scalajs.js
 
+import scalajs.js
 import scalafiddle.client._
 import scalafiddle.shared._
 
@@ -25,7 +25,7 @@ object Sidebar {
   case object AvailableLib extends LibMode
 
   case class Props(data: ModelProxy[FiddleData]) {
-    def dispatch = data.theDispatch
+    def dispatch[A: ActionType](a: A) = data.dispatchCB(a)
   }
 
   case class State(showAllVersions: Boolean)
@@ -103,7 +103,7 @@ object Sidebar {
       )
     }
 
-    def renderLibrary(lib: Library, mode: LibMode, dispatch: Any => Callback) = {
+    def renderLibrary(lib: Library, mode: LibMode, dispatch: Action => Callback) = {
       val (action, icon) = mode match {
         case SelectedLib => (DeselectLibrary(lib), i(cls := "remove red icon"))
         case AvailableLib => (SelectLibrary(lib), i(cls := "plus green icon"))
