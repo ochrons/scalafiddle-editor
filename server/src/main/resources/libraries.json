@@ -339,6 +339,18 @@
           }
         ],
         "compileTimeOnly": false
+      },{
+        "name": "Doodle",
+        "organization": "underscoreio",
+        "artifact": "doodle",
+        "doc": "underscoreio/doodle",
+        "versions": {
+          "0.6.5": {
+            "scalaVersions": ["2.11"],
+            "extraDeps": []
+          }
+        },
+        "compileTimeOnly": false
       }
     ]
   },
