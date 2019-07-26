@@ -33,7 +33,7 @@ object Settings {
     val slick        = "3.2.0"
     val silhouette   = "5.0.1"
     val kamon        = "0.6.7"
-    val base64       = "0.2.6"
+    val base64       = "0.2.9"
     val scalaParse   = "0.4.3"
     val scalatags    = "0.6.7"
 
