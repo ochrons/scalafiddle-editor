@@ -5,7 +5,7 @@ browser).
 
 ## Usage
 
-For documentation on how to use the ScalaFiddle editor, see the [Welcome](docs/Welcome.md).
+For documentation on how to use the ScalaFiddle editor, see the [Welcome](docs/Welcome-src.md).
 
 ## Hosting your own ScalaFiddle editor
 
