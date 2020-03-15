@@ -130,8 +130,10 @@ object FiddleEditor {
                     div(cls := "divider"),
                     div(cls := "ui input")(
                       div(cls := "ui checkbox")(
-                        input.checkbox(checked := state.showTemplate, onChange --> switchTemplate),
-                        label("Show template")
+                        label(
+                          "Show template",
+                          input.checkbox(checked := state.showTemplate, onChange --> switchTemplate)
+                        )
                       )
                     )
                   )
